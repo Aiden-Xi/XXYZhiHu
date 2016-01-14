@@ -25,8 +25,7 @@
 
 @implementation NewsNavigation
 
-- (instancetype)initWithFrame:(CGRect)frame{
-    
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self == [super initWithFrame:frame]) {
         
         [self addSubview:self.backBtn];
@@ -39,7 +38,6 @@
         
     }
     return self;
-    
 }
 
 - (void)layoutSubviews{

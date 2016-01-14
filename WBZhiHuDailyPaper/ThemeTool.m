@@ -14,9 +14,9 @@
 + (void)getThemesWithSuccessfulBlock:(SuccessfulBlock )block{
     
     [HttpTool get:@"http://news-at.zhihu.com/api/4/themes" params:nil success:^(id json) {
-        NSArray *array = [NSArray array];
-        array = [Theme mj_objectArrayWithKeyValuesArray: json[@"others"]];
-        block(array);
+        NSArray *arrayJson = [NSArray array];
+        arrayJson = [Theme mj_objectArrayWithKeyValuesArray: json[@"others"]];
+        block(arrayJson);
 
     } failure:^(NSError *error) {
         nil;

@@ -21,11 +21,11 @@
 
 #import "DetailStory.h"
 
-typedef NS_OPTIONS(NSUInteger, NavigationTag){
-    NavigationTagBack = 1 << 0,
-    NavigationTagNext = 1 << 1,
-    NavigationTagVote = 1 << 2,
-    NavigationTagShare = 1 << 3,
+typedef NS_OPTIONS(NSUInteger, NavigationTag) {
+    NavigationTagBack    = 1 << 0,
+    NavigationTagNext    = 1 << 1,
+    NavigationTagVote    = 1 << 2,
+    NavigationTagShare   = 1 << 3,
     NavigationTagComment = 1 << 4,
 };
 
@@ -35,12 +35,13 @@ static CGFloat const animationDuraion = 0.2f;
 <NewsNavigationDelegate,
 DetailViewControllerDelegate>
 
-@property (nonatomic, strong) NewsNavigation *naviView;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) NewsNavigation       *naviView;
+@property (nonatomic, strong) UIScrollView         *scrollView;
+@property (nonatomic, strong) DetailStory          *story;
 
 @property (nonatomic, strong) DetailViewController *detailVc;
 
-@property (nonatomic, strong) DetailStory *story;
+
 
 @end
 

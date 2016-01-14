@@ -87,7 +87,13 @@ HomeCellDelegate>
 }
 
 #pragma mark - UITablView Delegte
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+/**
+ *  点击某个tableView的头部
+ *
+ *  @param tableView tableView
+ *  @param indexPath 位置
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     StoryModel *storyModel = [self.newsArrayDataSource itemAtIndexPath:indexPath];
     [self pushViewDetailViewControllerWithStoryModel:storyModel];
 }

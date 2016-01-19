@@ -19,7 +19,6 @@
 
 - (void)scrollToLastViewWithNumber:(NSNumber *)storyId;
 
-
 @end
 
 

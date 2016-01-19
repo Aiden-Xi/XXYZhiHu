@@ -34,8 +34,6 @@
 @property (nonatomic, strong) DetailHeaderView *headerView;
 @property (nonatomic, strong) DetailFooterView *footerView;
 
-
-
 @end
 
 @implementation DetailViewController
@@ -52,14 +50,13 @@
     
 }
 
-- (void)dealloc{
- 
+- (void)dealloc {
     [self.webView.scrollView removeObserver:self.headerView forKeyPath:@"contentOffset"];
     [self.webView.scrollView removeObserver:self.footerView forKeyPath:@"contentOffset"];
-    
 }
 
 #pragma mark - UIWebView Delegate
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -80,6 +77,7 @@
     };";
     
     [webView stringByEvaluatingJavaScriptFromString:jsGetImages];//注入js方法
+    
     [webView stringByEvaluatingJavaScriptFromString:@"getImages()"];
     
     //    上拉加载
@@ -92,7 +90,6 @@
         self.footerView.y = height + 15;
         [self.webView.scrollView addSubview:self.footerView];
     }
-    
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
@@ -124,19 +121,20 @@
     if ([self.delegate respondsToSelector:@selector(scrollToNextViewWithNumber:)]) {
         [self.delegate scrollToNextViewWithNumber:[self.tool getNextNewsWithId:self.storyId]];
     }
-    
 }
+
 //加载上一条新闻
 - (void)loadLastNews{
     
     if ([self.delegate respondsToSelector:@selector(scrollToLastViewWithNumber:)]) {
         [self.delegate scrollToLastViewWithNumber:[self.tool getLastNewsWithId:self.storyId]];
     }
-    
 }
 
 //计算frame
 - (void)calculateFrameWithDetailStory:(DetailStory *)detailStory{
+    NSLog(@"--utl- %@", self.detailStory.htmlUrl);
+    
     [self.webView loadHTMLString:self.detailStory.htmlUrl
                          baseURL:nil];
     
@@ -165,7 +163,6 @@
         self.headerView.y = -50;
         [self.webView.scrollView addSubview:self.headerView];
     }
-    
 }
 
 #pragma mark - getter and setter

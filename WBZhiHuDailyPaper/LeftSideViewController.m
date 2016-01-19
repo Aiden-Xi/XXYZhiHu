@@ -61,14 +61,17 @@ static NSString * const isNight = @"isNight";
     });
     
     Theme *theme = self.themes[indexPath.row];
+    
+    NSLog(@"-----主题名称---%@", theme);
+    
     if (indexPath.row == 0) {
         [self.delegate setCenterViewController:self.delegate.naviController withCloseAnimation:YES completion:nil];
     }else{
         self.themeVC.theme = theme;
         [self.delegate setCenterViewController:self.naviVC withCloseAnimation:YES completion:nil];
     }
-    
 }
+
 - (IBAction)nightDaySwitch:(UIButton *)sender {
     sender.selected =! sender.selected;
 

@@ -130,7 +130,7 @@
                 <constraint firstItem="d3C-hp-Pcn" firstAttribute="leading" secondItem="86k-0d-DY6" secondAttribute="trailing" id="y9o-hF-6Bi"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="283" y="252.5"/>
+            <point key="canvasLocation" x="-35" y="236.5"/>
         </view>
     </objects>
     <resources>
